@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  jupyter:
+    container_name: my-jupyter #コンテナ名を入れる（任意）
+    image: jupyter/datascience-notebook
+    ports:
+      - 8888:8888
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    volumes:
+      - ${HOME}/Documents/:/home/jovyan/work
+    command: start-notebook.sh
